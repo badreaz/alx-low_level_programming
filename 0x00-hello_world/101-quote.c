@@ -8,7 +8,7 @@
 int main(void)
 {
 	char quote[] = "and that piece of art is useful\" - Dora Korpar,";
-	char date[] = "2015-10-19";
+	char date[] = " 2015-10-19";
 
 	write(1, quote, sizeof(quote));
 	write(1, date, sizeof(date));
