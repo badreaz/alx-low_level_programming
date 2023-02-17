@@ -13,12 +13,12 @@ int main(void)
 	int num4;
 
 	num = 48;
+	num2 = 48;
+	num3 = 48;
 	while (num <= '9')
 	{
-		num2 = num + 1;
 		while (num2 <= '9')
 		{
-			num3 = num2 + 1;
 			while (num3 <= '9')
 			{
 				num4 = num3 + 1;
@@ -28,6 +28,7 @@ int main(void)
 					putchar(num2);
 					putchar(' ');
 					putchar(num3);
+					putchar(num4);
 					if (num < '7')
 					{
 						putchar(',');
