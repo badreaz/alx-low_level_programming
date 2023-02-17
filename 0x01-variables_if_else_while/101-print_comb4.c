@@ -15,7 +15,7 @@ int main(void)
 	while (num <= '9')
 	{
 		num2 = num + 1;
-		while (num1 <= '9')
+		while (num2 <= '9')
 		{
 			num3 = num2 + 1;
 			while (num3 <= '9')
