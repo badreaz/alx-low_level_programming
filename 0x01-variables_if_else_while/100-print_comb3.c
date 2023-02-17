@@ -11,7 +11,7 @@ int main(void)
 	int ascii2;
 
 	ascii = 48;
-	while (ascii <= '9'
+	while (ascii <= '9')
 	{
 		putchar(ascii);
 		ascii2 = ascii + 1;
