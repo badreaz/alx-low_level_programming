@@ -16,10 +16,10 @@ int main(void)
 	while (num <= '9')
 	{
 		num2 = 48;
-		num4 = num2 + 1;
 		while (num2 <= '9')
 		{
 			num3 = num;
+			num4 = num2 + 1;
 			while (num3 <= '9')
 			{
 				while (num4 <= '9')
