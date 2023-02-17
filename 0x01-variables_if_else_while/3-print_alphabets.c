@@ -19,10 +19,8 @@ int main(void)
 	while (alphabet <= 'Z')
 	{
 		putchar(alphabet);
-		if (alphabet == 'Z')
-		{
-			putchar('\n');
-		}
+		alphabet++;
 	}
+	putchar('\n');
 	return (0);
 }

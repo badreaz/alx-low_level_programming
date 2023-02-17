@@ -10,7 +10,7 @@ int main(void)
 	int ascii;
 
 	ascii = 48;
-	while (ascii <= "9")
+	while (ascii <= '9')
 	{
 		putchar(ascii);
 		ascii++;
