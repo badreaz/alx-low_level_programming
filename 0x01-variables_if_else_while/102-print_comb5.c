@@ -13,18 +13,21 @@ int main(void)
 	int num4;
 
 	num = 48;
-	num2 = 48;
 	while (num <= '9')
 	{
+		num2 = 48;
 		while (num2 <= '9')
 		{
-			num3 = 48;
+			num3 = num;
 			while (num3 <= '9')
 			{
-				num4 = 48;
+				num4 = num2;
 				while (num4 <= '9')
 				{
-					num4++;
+					if (num3 == num)
+					{
+						num4++;
+					}
 					putchar(num);
 					putchar(num2);
 					putchar(' ');
@@ -35,13 +38,13 @@ int main(void)
 						putchar(',');
 						putchar(' ');
 					}
+					num4++;
 				}
 				num3++;
 			}
 			num2++;
 		}
 		num++;
-		num2 = num + 1;
 	}
 	putchar('\n');
 	return (0);
