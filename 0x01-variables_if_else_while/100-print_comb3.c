@@ -13,10 +13,10 @@ int main(void)
 	ascii = 48;
 	while (ascii <= '9')
 	{
-		putchar(ascii);
 		ascii2 = ascii + 1;
 		while (ascii2 <= '9')
 		{
+			putchar(ascii);
 			putchar(ascii2);
 			if (ascii <= '9' && ascii2 <= '9')
 			{
