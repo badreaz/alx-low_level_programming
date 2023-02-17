@@ -39,8 +39,10 @@ int main(void)
 				num3++;
 			}
 			num2++;
+			num3 = num2 + 1;
 		}
 		num++;
+		num2 = num + 1;
 	}
 	putchar('\n');
 	return (0);
