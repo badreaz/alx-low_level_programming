@@ -18,7 +18,7 @@ int main(void)
 		{
 			putchar(ascii);
 			putchar(ascii2);
-			if (ascii <= '9' && ascii2 <= '9')
+			if (ascii < '8')
 			{
 				putchar(',');
 				putchar(' ');
