@@ -16,18 +16,14 @@ int main(void)
 	while (num <= '9')
 	{
 		num2 = 48;
+		num4 = num2 + 1;
 		while (num2 <= '9')
 		{
 			num3 = num;
 			while (num3 <= '9')
 			{
-				num4 = num2;
 				while (num4 <= '9')
 				{
-					if (num3 == num)
-					{
-						num4++;
-					}
 					putchar(num);
 					putchar(num2);
 					putchar(' ');
@@ -41,6 +37,7 @@ int main(void)
 					num4++;
 				}
 				num3++;
+				num4 = 48;
 			}
 			num2++;
 		}
