@@ -6,9 +6,9 @@
  */
 int _islpha(int c)
 {
-	if (64 < c < 123)
+	if (64 < c && c < 123)
 	{
-		if (90 < c < 97)
+		if (90 < c && c < 97)
 		{
 			return(0);
 		}
