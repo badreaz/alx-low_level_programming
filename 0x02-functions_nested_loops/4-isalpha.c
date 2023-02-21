@@ -5,7 +5,7 @@
  *
  * Return: 1 if c is alphabet otherwise 0.
  */
-int _islpha(int c)
+int _isalpha(int c)
 {
 	if (64 < c && 123 > c)
 	{
