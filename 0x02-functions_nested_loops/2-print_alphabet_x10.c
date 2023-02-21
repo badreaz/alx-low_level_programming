@@ -9,9 +9,9 @@ void print_alphabet_x10(void)
 	int i = 0;
 	char alpha = 'a';
 
-	while(i < 10)
+	while (i < 10)
 	{
-		while(alpha <= 'z')
+		while (alpha <= 'z')
 		{
 			_putchar(alpha);
 			alpha++;
@@ -19,5 +19,5 @@ void print_alphabet_x10(void)
 		_putchar('\n');
 		i++;
 	}
-	return(0);
+	return (0);
 }

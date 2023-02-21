@@ -12,13 +12,13 @@ void jack_bauer(void)
 	int digit;
 
 	i = 0;
-	while(i < 24)
+	while (i < 24)
 	{
 		j = 0;
-		while(j < 6)
+		while (j < 6)
 		{
 			k = 0;
-			while(k < 10)
+			while (k < 10)
 			{
 				digit = i % 100;
 				_putchar(digit + '0');

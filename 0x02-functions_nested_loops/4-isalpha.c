@@ -10,9 +10,9 @@ int _islpha(int c)
 	{
 		if (90 < c && c < 97)
 		{
-			return(0);
+			return (0);
 		}
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }
