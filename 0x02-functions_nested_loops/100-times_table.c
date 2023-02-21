@@ -1,5 +1,5 @@
 #include "main.h"
-void printnum(int, int);
+void printnum(int, int, int);
 /**
  * print_times_table - print the n times table.
  * @n: number of times table.
@@ -15,7 +15,7 @@ void print_times_table(int n)
 		{
 			for (j = 0; j < n + 1; j++)
 			{
-				printnum(i, j);
+				printnum(i, j, n);
 				/*
 				* result = i * j;
 				* if (j == 0)
@@ -55,8 +55,9 @@ void print_times_table(int n)
  * printnum - print times teable template
  * @i: i
  * @j: j
+ * @n: n
  */
-void printnum(int i, int j)
+void printnum(int i, int j, int n)
 {
 	int result;
 
