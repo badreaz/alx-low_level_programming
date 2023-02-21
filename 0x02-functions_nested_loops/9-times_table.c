@@ -1,4 +1,4 @@
-
+#include "main.h"
 /**
  * times_table - print the nine times table.
  */
@@ -24,3 +24,6 @@ void times_table(void)
 			}
 			j++;
 		}
+		i++;
+	}
+}

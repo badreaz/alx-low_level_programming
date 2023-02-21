@@ -1,4 +1,4 @@
-
+#include "main.h"
 /**
  * print_lat_digit - print the last digit of a number.
  *

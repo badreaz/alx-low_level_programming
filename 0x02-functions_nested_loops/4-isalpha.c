@@ -1,4 +1,4 @@
-
+#include "main.h"
 /**
  * _isalpha - check if c is alphabet.
  *
@@ -6,9 +6,9 @@
  */
 int _islpha(int c)
 {
-	if (64 < c && c < 123)
+	if (64 < c && 123 > c)
 	{
-		if (90 < c && c < 97)
+		if (90 < c && 97 > c)
 		{
 			return (0);
 		}
