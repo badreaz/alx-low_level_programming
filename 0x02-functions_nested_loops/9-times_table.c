@@ -8,31 +8,26 @@ void times_table(void)
 	int j;
 	int result;
 
-	i = 0;
-	while (i < 10)
+	for (i = 0; i < 10; i++)
 	{
-		j = 0;
-		while (j < 10)
+		for (j = 0; j < 10; j++)
 		{
-			if (j == 0)
-			{
-				_putchar('0');
-				_putchar(',');
-			}
 			result = i * j;
-			if (result % 1000 == 0)
+			if (result < 10)
 			{
-				_putchar((result % 1000) + '0');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(result + '0');
+			}
+			else if (result < 100)
+			{
+				_putchar(' ');
 				_putchar((result % 100) + '0');
 				_putchar((result % 10) + '0');
 			}
 			if (j < 9)
-			{
 				_putchar(',');
-			}
-			j++;
 		}
 		_putchar('\n');
-		i++;
 	}
 }
