@@ -30,7 +30,7 @@ int main(void)
 	}
 
 	fnum1 = fnum / 10000000000;
-	lnuml = lnum / 10000000000;
+	lnum1 = lnum / 10000000000;
 	fnum2 = fnum % 10000000000;
 	lnum2 = lnum % 10000000000;
 
