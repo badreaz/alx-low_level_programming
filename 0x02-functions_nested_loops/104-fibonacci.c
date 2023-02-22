@@ -8,11 +8,11 @@
 int main(void)
 {
 	int i;
-	double fnum;
-	double lnum;
-	double new;
+	unsigned long fnum, fnum1, fnum2;
+	unsigned long lnum, lnum1, lnum2;
+	unsigned long new, new2;
 
-	for (i = 1; i < 98; i++)
+	for (i = 1; i < 91; i++)
 	{
 		if (i == 1)
 		{
@@ -23,12 +23,34 @@ int main(void)
 		else
 		{
 			new = fnum + lnum;
-			printf(", %lf", new);
+			printf(", %lu", new);
 			fnum = lnum;
 			lnum = new;
 		}
 	}
-	printf('\n');
+
+	fnum1 = fnum / 10000000000;
+	lnuml = lnum / 10000000000;
+	fnum2 = fnum % 10000000000;
+	lnum2 = lnum % 10000000000;
+
+	for (i = 91; i < 98; i++)
+	{
+		new = fnum1 + lnum1;
+		new2 = fnum2 + lnum2;
+		if (fnum2 + lnum2 > 9999999999)
+		{
+			new += 1;
+			new2 %= 10000000000;
+		}
+		printf(", %lu%lu", new, new2);
+		fnum1 = lnum1;
+		fnum2 = lnum2;
+		lnum1 = new;
+		lnum2 = new2;
+	}
+
+	printf("\n");
 
 	return (0);
 }
