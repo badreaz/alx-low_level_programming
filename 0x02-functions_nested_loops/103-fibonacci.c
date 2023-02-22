@@ -32,7 +32,7 @@ int main(void)
 			lnum = new;
 		}
 	}
-	printf("\n");
+	printf("%lu\n", sum);
 
 	return (0);
 }
