@@ -8,11 +8,11 @@
 int main(void)
 {
 	long int i;
-	long long int fnum;
-	long long int lnum;
-	long long int new;
+	double fnum;
+	double lnum;
+	double new;
 
-	for (i = 1, i < 4000000; i++)
+	for (i = 1; i < 4000000; i++)
 	{
 		if (i == 1)
 		{
@@ -25,7 +25,7 @@ int main(void)
 			new = fnum + lnum;
 			if (new % 2 == 0)
 			{
-				printf(", %lld", new);
+				printf(", %lf", new);
 			}
 			fnum = lnum;
 			lnum = new;
