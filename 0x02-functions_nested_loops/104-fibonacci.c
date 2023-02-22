@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print(uint64_t);
+void print(double);
 
 /**
  * main - prints the first 98 fibonacci number.
@@ -10,9 +10,9 @@ void print(uint64_t);
 int main(void)
 {
 	int i;
-	uint64_t fnum;
-	uint64_t lnum;
-	uint64_t new;
+	double fnum;
+	double lnum;
+	double new;
 
 	for (i = 1; i < 98; i++)
 	{
@@ -44,7 +44,7 @@ int main(void)
  * print - print long number using putchar
  * @new: the long number
  */
-void print(uint64_t new)
+void print(double new)
 {
 	if (new / 10)
 		print(new / 10);
