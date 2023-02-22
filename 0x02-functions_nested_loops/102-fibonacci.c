@@ -8,8 +8,8 @@
 int main(void)
 {
 	int i;
-	int fnum;
-	int lnum;
+	long int fnum;
+	long int lnum;
 
 	for (i = 1; i < 50; i++)
 	{
@@ -21,7 +21,7 @@ int main(void)
 		}
 		else
 		{
-			printf(", %d", fnum + lnum);
+			printf(", %ld", fnum + lnum);
 			fnum = lnum;
 			lnum = fnum + lnum;
 		}
