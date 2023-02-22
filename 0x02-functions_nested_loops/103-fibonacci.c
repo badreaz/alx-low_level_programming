@@ -8,9 +8,9 @@
 int main(void)
 {
 	long int i;
-	double fnum;
-	double lnum;
-	double new;
+	unsigned long int fnum;
+	unsigned long int lnum;
+	unsigned long int new;
 
 	for (i = 1; i < 4000000; i++)
 	{
@@ -25,7 +25,7 @@ int main(void)
 			new = fnum + lnum;
 			if (new % 2 == 0)
 			{
-				printf(", %lf", new);
+				printf(", %lu", new);
 			}
 			fnum = lnum;
 			lnum = new;
