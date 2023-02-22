@@ -13,7 +13,7 @@ int main(void)
 	unsigned long int new;
 	unsigned long int sum;
 
-	for (i = 1; i < 4000000; i++)
+	for (i = 1; i < 50; i++)
 	{
 		if (i == 1)
 		{
@@ -24,7 +24,7 @@ int main(void)
 		else
 		{
 			new = fnum + lnum;
-			if (new % 2 == 0)
+			if (new % 2 == 0 && new < 4000000)
 			{
 				sum += new;
 			}
