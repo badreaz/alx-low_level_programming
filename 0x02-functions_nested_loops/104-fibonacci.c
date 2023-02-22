@@ -8,7 +8,7 @@
 int main(void)
 {
 	unsigned long i, new, new2, fnum, lnum;
-	unsigned long fnum1, fnum, lnum1, lnum2;
+	unsigned long fnum1, fnum2, lnum1, lnum2;
 
 	for (i = 1; i < 91; i++)
 	{
