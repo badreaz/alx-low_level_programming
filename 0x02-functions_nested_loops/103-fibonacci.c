@@ -11,12 +11,13 @@ int main(void)
 	unsigned long int fnum;
 	unsigned long int lnum;
 	unsigned long int new;
+	unsigned long int sum;
 
 	for (i = 1; i < 4000000; i++)
 	{
 		if (i == 1)
 		{
-			printf("2");
+			sum = 2;
 			fnum = 1;
 			lnum = 2;
 		}
@@ -25,7 +26,7 @@ int main(void)
 			new = fnum + lnum;
 			if (new % 2 == 0)
 			{
-				printf(", %lu", new);
+				sum += new;
 			}
 			fnum = lnum;
 			lnum = new;
