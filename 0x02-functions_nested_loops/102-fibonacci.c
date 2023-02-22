@@ -10,6 +10,7 @@ int main(void)
 	int i;
 	long int fnum;
 	long int lnum;
+	long int tmp;
 
 	for (i = 1; i < 50; i++)
 	{
@@ -22,8 +23,9 @@ int main(void)
 		else
 		{
 			printf(", %ld", fnum + lnum);
+			tmp = fnum;
 			fnum = lnum;
-			lnum = fnum + lnum;
+			lnum = tmp + lnum;
 		}
 	}
 	printf("\n");
