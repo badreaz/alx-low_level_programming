@@ -7,10 +7,8 @@
  */
 int main(void)
 {
-	int i;
-	unsigned long fnum, fnum1, fnum2;
-	unsigned long lnum, lnum1, lnum2;
-	unsigned long new, new2;
+	unsigned long i, new, new2, fnum, lnum;
+	unsigned long fnum1, fnum, lnum1, lnum2;
 
 	for (i = 1; i < 91; i++)
 	{
@@ -28,12 +26,10 @@ int main(void)
 			lnum = new;
 		}
 	}
-
 	fnum1 = fnum / 10000000000;
 	lnum1 = lnum / 10000000000;
 	fnum2 = fnum % 10000000000;
 	lnum2 = lnum % 10000000000;
-
 	for (i = 91; i < 98; i++)
 	{
 		new = fnum1 + lnum1;
@@ -49,8 +45,6 @@ int main(void)
 		lnum1 = new;
 		lnum2 = new2;
 	}
-
 	printf("\n");
-
 	return (0);
 }
