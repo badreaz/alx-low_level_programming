@@ -1,6 +1,4 @@
-#include "main.h"
-
-void print(unsigned long long);
+#include <stdio.h>
 
 /**
  * main - prints the first 98 fibonacci number.
@@ -10,44 +8,27 @@ void print(unsigned long long);
 int main(void)
 {
 	int i;
-	unsigned long long fnum;
-	unsigned long long lnum;
-	unsigned long long new;
+	double fnum;
+	double lnum;
+	double new;
 
 	for (i = 1; i < 98; i++)
 	{
 		if (i == 1)
 		{
-			_putchar('1');
-			_putchar(',');
-			_putchar(' ');
-			_putchar('2');
+			printf("1, 2");
 			fnum = 1;
 			lnum = 2;
 		}
 		else
 		{
-			_putchar(',');
-			_putchar(' ');
 			new = fnum + lnum;
-			print(new);
+			printf(", %lf", new);
 			fnum = lnum;
 			lnum = new;
 		}
 	}
-	_putchar('\n');
+	printf('\n');
 
 	return (0);
-}
-
-/**
- * print - print long number using putchar
- * @new: the long number
- */
-void print(unsigned long long new)
-{
-	if (new / 10)
-		print(new / 10);
-
-	_putchar('0' + (new % 10.0));
 }
