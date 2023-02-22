@@ -49,5 +49,5 @@ void print(double new)
 	if (new / 10)
 		print(new / 10);
 
-	_putchar('0' + (new % 10));
+	_putchar('0' + (new % 10.0));
 }
