@@ -3,7 +3,7 @@
 
 /**
  * main - print numbers from 0 to 100.
- * Description: replace multiple by 3 or 5 to 
+ * Description: replace multiple by 3 or 5 to
  * Fizz Buzz respectively and FizzBuzz if both.
  *
  * Return: 0
