@@ -13,6 +13,9 @@ void print_number(int n)
 		_putchar('-');
 		n = -n;
 	}
+	else if (n == 0)
+		_putchar('0');
+
 	i = n;
 	j = 1;
 	while (i > 9)
