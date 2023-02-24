@@ -12,13 +12,13 @@ int main(void)
 
 	for (i = 3; i < 12057; i += 2)
 	{
-		if ((num % i == 0) && n != i)
+		if ((num % i == 0) && num != i)
 		{
 			num = num / i;
 		}
 	}
 
-	printf("%d\n", num);
+	printf("%ld\n", num);
 
 	return (0);
 }
