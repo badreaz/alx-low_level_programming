@@ -7,20 +7,18 @@
  */
 int main(void)
 {
-	int largest;
 	int i;
 	long int num = 612852475143;
 
-	for (i = 2; i <= num; i++)
+	for (i = 3; i < 12057; i += 2)
 	{
-		if (num % i == 0)
+		if ((num % i == 0) && n != i)
 		{
 			num = num / i;
-			largest = i;
 		}
 	}
 
-	printf("%d\n", largest);
+	printf("%d\n", num);
 
 	return (0);
 }
