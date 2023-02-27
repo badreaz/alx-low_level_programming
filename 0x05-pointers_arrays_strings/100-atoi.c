@@ -8,39 +8,34 @@
  */
 int _atoi(char *s)
 {
-	int n = 0, count = 0;
-	int *num;
+	int n = 0, count = 0, m = 0;
+	int times = 0 num = 0, i = 0;
 
 	while (*s != '\0')
 	{
-		if (*s == '-')
-			n++;
-		else if (*s > 47 && *s < 58)
+		if (*s > 47 && *s < 58)
 		{
-			while (*s != '\0' && *s > 47 && *s < 58)
-			{
-				if (num == 0)
-					*num = *s - 48;
-				else
-				{
-					*num *= 10;
-					*num += *s - 48;
-				}
-				if (count > 6)
-				{
-					num++;
-					*num = 0;
-					count = 0;
-				}
-				s++;
-				count++;
-			}
-			if (n % 2 != 0)
-				num *= -1;
-
-			return (num);
+			count++;
+			if (!(*(s + 1) > 47 && *(s + 1) < 58))
+				break;
 		}
 		s++;
+		n++;
+	}
+	for (; count > 1; count--)
+		times *= 10;
+
+	while ( i <= n)
+	{
+		if (s[i] == '-')
+			m *= -1;
+
+		else if (s[i] > 47 && s[i] < 58)
+		{
+			num += (s[i] + '0') * times * m;
+			times /= 10;
+		}
+		i++;
 	}
 	return (num);
 }
