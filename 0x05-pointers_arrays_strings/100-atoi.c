@@ -10,6 +10,7 @@ int _atoi(char *s)
 {
 	int n = 0, count = 0, m = 0;
 	int times = 1, num = 0, i = 0;
+	char *new = s;
 
 	while (*s != '\0')
 	{
@@ -27,14 +28,15 @@ int _atoi(char *s)
 
 	while (i <= n)
 	{
-		if (s[i] == '-')
+		if (*new == '-')
 			m *= -1;
 
-		else if (s[i] > 47 && s[i] < 58)
+		else if (*new > 47 && *new < 58)
 		{
-			num += (s[i] + '0') * times * m;
+			num += (*new + '0') * times * m;
 			times /= 10;
 		}
+		new++;
 		i++;
 	}
 	return (num);
