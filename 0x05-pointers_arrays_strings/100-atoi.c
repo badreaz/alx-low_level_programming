@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	int n = 0, count = 0, m = 0;
-	int times = 0, num = 0, i = 0;
+	int times = 1, num = 0, i = 0;
 
 	while (*s != '\0')
 	{
