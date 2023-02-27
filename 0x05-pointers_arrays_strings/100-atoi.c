@@ -22,6 +22,7 @@ int _atoi(char *s)
 			{
 				num *= 10;
 				num += *s - 48;
+			}
 			if (n % 2 != 0)
 				num *= -1;
 			n = 0;
