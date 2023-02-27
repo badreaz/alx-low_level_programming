@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	double num = 0, n = 0;
+	int num = 0, n = 0;
 
 	while (*s != '\0')
 	{
