@@ -12,32 +12,27 @@ int _atoi(char *s)
 	int times = 1, num = 0, i = 0;
 	char *new = s;
 
-	while (*s != '\0')
+	while (s[count] != '\0')
+		count++;
+
+	while (i < count)
 	{
-		if (*s > 47 && *s < 58)
+		if (s[i] == '-')
+			m *= -1;
+		else if (s[i] > 47 && s[i] < 58)
 		{
-			count++;
-			if (!(*(s + 1) > 47 && *(s + 1) < 58))
+			if (num == 0)
+				num = s[i] + '0';
+			else
+			{
+				num *= 10;
+				num += s[i] + '0';
+			}
+			if (!(s[i + 1] > 47 && s[i + 1] < 58))
 				break;
 		}
-		s++;
-		n++;
-	}
-	for (; count > 1; count--)
-		times *= 10;
-
-	while (i <= n)
-	{
-		if (*new == '-')
-			m *= -1;
-
-		else if (*new > 47 && *new < 58)
-		{
-			num += (*new + '0') * times * m;
-			times /= 10;
-		}
-		new++;
 		i++;
 	}
+	num *= m;
 	return (num);
 }
