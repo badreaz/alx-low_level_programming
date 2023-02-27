@@ -16,18 +16,22 @@ int _atoi(char *s)
 			n++;
 		else if (*s > 47 && *s < 58)
 		{
-			if (num == 0)
-				num = *s - 48;
-			else
+			while (*s != '\0' && *s > 47 && *s < 58)
 			{
-				num *= 10;
-				num += *s - 48;
+				if (num == 0)
+					num = *s - 48;
+				else	
+				{
+					num *= 10;
+					num += *s - 48;
+				}
+				s++;
 			}
 			if (n % 2 != 0)
 				num *= -1;
-			n = 0;
+
+			return (num);
 		}
 		s++;
 	}
-	return (num);
 }
