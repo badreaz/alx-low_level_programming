@@ -9,7 +9,7 @@ void puts_half(char *str)
 	int count = 0;
 	char *new = str;
 
-	while (*new != '\0' && new != NULL)
+	while (*new != '\0')
 	{
 		count++;
 		new++;
