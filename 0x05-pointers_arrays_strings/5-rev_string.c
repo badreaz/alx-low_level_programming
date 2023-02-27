@@ -20,7 +20,7 @@ void rev_string(char *s)
 	else
 		count = (count - 1) /2;
 
-	while (n <= count)
+	while (n < count)
 	{
 		s--;
 		tmp = *str;
