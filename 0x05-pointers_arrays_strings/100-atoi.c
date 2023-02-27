@@ -8,9 +8,8 @@
  */
 int _atoi(char *s)
 {
-	int n = 0, count = 0, m = 0;
-	int times = 1, num = 0, i = 0;
-	char *new = s;
+	int count = 0, m = 0;
+	int num = 0, i = 0;
 
 	while (s[count] != '\0')
 		count++;
