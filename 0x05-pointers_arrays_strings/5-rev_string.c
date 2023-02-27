@@ -15,14 +15,12 @@ void rev_string(char *s)
 		count++;
 		s++;
 	}
-	s--;
 	while (n <= count / 2)
 	{
 		tmp = *str;
-		*str = *s;
-		*s = tmp;
+		*str = s[count - n];
+		s[count - n] = tmp;
 		str++;
-		s--;
 		n++;
 	}
 	*str = '\0';
