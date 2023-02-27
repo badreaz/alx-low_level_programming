@@ -14,6 +14,7 @@ int _strlen(char *s)
 	while (*p != '\0')
 	{
 		count++;
+		p++;
 	}
 	return (count);
 }
