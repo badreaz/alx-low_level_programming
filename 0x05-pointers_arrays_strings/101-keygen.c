@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i, num;
-	char passsword[10];
+	char password[10];
 
 	srand((unsigned int)time(NULL));
 	
