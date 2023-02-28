@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -9,21 +10,25 @@
 int main(void)
 {
 	int i, num;
-	char password[10];
+	int total = 0;
+	int password[100];
 
-	srand((unsigned int)time(NULL));
+	srand(time(NULL));
 	
-	for (i = 1; i < 10; i++)
+	for (i = 0; i < 100; i++)
 	{
-		num = rand() % 128;
-		if (num > 47 && num < 58)
+		password[i] = rand() % 78;
+		total += password[i] + '0';
+		putchar(passwrod[i] + '0');
+
+		if ((2772 - total) - '0'  < 78)
 		{
-			password[i] = num + '0';
+			num = 2772 - total - '0';
+			total += num;
+			putchar(num + '0');
+			break;
 		}
-		else
-			i--;
 	}
-	password[10] = '\0';
 
 	return (0);
 }
