@@ -19,7 +19,7 @@ int main(void)
 	{
 		password[i] = rand() % 78;
 		total += password[i] + '0';
-		putchar(passwrod[i] + '0');
+		putchar(password[i] + '0');
 
 		if ((2772 - total) - '0'  < 78)
 		{
