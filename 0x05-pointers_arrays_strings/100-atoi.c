@@ -8,30 +8,29 @@
  */
 int _atoi(char *s)
 {
-	int count = 0, m = 0;
-	int num = 0, i = 0;
+	int  m = 1,  num = 0, i = 0;
 
-	while (s[count] != '\0')
-		count++;
-
-	while (i < count)
+	while ((s[i] < 58 || s[i] > 57) && s[i] != '\0')
 	{
 		if (s[i] == '-')
 			m *= -1;
-		else if (s[i] > 47 && s[i] < 58)
-		{
-			if (num == 0)
-				num = s[i] + '0';
-			else
-			{
-				num *= 10;
-				num += s[i] + '0';
-			}
-			if (!(s[i + 1] > 47 && s[i + 1] < 58))
-				break;
-		}
 		i++;
 	}
+	while ((s[i] > 47 && s[i] < 58) && s[i] != '\0')
+	{
+		if (num >= 0)
+		{
+			num = num * 10 - (s[i] - '0');
+			i++;
+		}
+		else
+		{
+			num = num * 10 - (s[i] - '0');
+			i++;
+		}
+	}
+	m *= -1;
+
 	num *= m;
 	return (num);
 }
