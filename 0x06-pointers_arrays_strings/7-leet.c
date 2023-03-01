@@ -13,15 +13,15 @@ char *leet(char *c)
 	while (*str != '\0')
 	{
 		if (*str == 'a' || *str == 'A')
-			*str = "4";
+			*str = 52;
 		else if (*str == 'e' || *str == 'E')
-			*str = "3";
+			*str = 51;
 		else if (*str == 'o' || *str == 'O')
-			*str = "0";
+			*str = 48;
 		else if (*str == 't' || *str == 'T')
-			*str = "7";
+			*str = 55;
 		else if (*str == 'l' || *str == 'L')
-			*str = "1";
+			*str = 49;
 		str++;
 	}
 	return (c);
