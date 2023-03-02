@@ -16,7 +16,7 @@ void print_number(int n)
 
 	while (i / 10)
 	{
-		div += 10;
+		div *= 10;
 		i /= 10;
 	}
 
@@ -24,6 +24,6 @@ void print_number(int n)
 	{
 		i = n / div;
 		_putchar((i % 10) + '0');
-		div -= 10;
+		div /= 10;
 	}
 }
