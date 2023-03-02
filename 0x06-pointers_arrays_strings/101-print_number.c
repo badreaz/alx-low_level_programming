@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	int i = n, div = 0;
+	int i, div = 1;
 
 	if (n < 0)
 	{
@@ -14,13 +14,14 @@ void print_number(int n)
 		n *= -1;
 	}
 
+	i = n;
 	while (i / 10)
 	{
 		div *= 10;
 		i /= 10;
 	}
 
-	while (div != 1)
+	while (div != 0)
 	{
 		i = n / div;
 		_putchar((i % 10) + '0');
