@@ -11,14 +11,15 @@ char *rot13(char *c)
 	char *str = c;
 	int i;
 	char *rot_13 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *out_13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	while (*str != '\0')
 	{
-		for (i = 0; i < 26; i++)
+		for (i = 0; i < 52; i++)
 		{
 			if (*str == rot_13[i])
 			{
-				*str = rot[i + 13];
+				*str = out_13[i];
 				break;
 			}
 		}
