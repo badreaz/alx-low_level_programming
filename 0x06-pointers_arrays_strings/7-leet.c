@@ -9,19 +9,21 @@
 char *leet(char *c)
 {
 	char *str = c;
+	int i;
+	int lower[] = {97, 101, 111, 116, 108};
+	int upper[] = {65, 69, 79, 84, 76};
+	int num[] = {52, 51, 48, 55, 49};
 
 	while (*str != '\0')
 	{
-		if (*str == 'a' || *str == 'A')
-			*str = 52;
-		else if (*str == 'e' || *str == 'E')
-			*str = 51;
-		else if (*str == 'o' || *str == 'O')
-			*str = 48;
-		else if (*str == 't' || *str == 'T')
-			*str = 55;
-		else if (*str == 'l' || *str == 'L')
-			*str = 49;
+		for (i = 0; i < 5; i++)
+		{
+			if (*str == lower[i] || *str == upper[i])
+			{
+				*str = num[i];
+				break;
+			}
+		}
 		str++;
 	}
 	return (c);
