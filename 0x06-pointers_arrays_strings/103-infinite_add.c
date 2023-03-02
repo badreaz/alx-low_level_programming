@@ -20,19 +20,20 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	n1 += i - 1;
 	n2 += j - 1;
 	*(r + size_r) = '\0';
-	for (; n1[i] && *n2[j]; i--, j--, size_r--)
+	i--, j--, size_r--;
+	for (; n1[i] && n2[j]; i--, j--, size_r--)
 	{
 		res = (n1[i] - '\0') + (n2[j] - '\0') + rem;
 		r[size_r] = (res % 10) + '\0';
 		rem = res / 10;
 	}
-	for (; i >= 0; i--, size_r--)
+	for (; n1[i]; i--, size_r--)
 	{
 		res = (n1[i] - '\0') + rem;
 		r[size_r] = (res % 10) + '\0';
 		rem = res / 10;
 	}
-	for (; j >= 0; j--, size_r--)
+	for (; n2[j]; j--, size_r--)
 	{
 		res = (n2[j] - '\0') + rem;
 		r[size_r] = (n2[j] % 10) + '\0';
