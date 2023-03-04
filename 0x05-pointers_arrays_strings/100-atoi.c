@@ -8,7 +8,8 @@
  */
 int _atoi(char *s)
 {
-	int  m = 1,  num = 0, i = 0;
+	int  m = 1, i = 0;
+	unsigned int num = 0;
 
 	while ((s[i] < 48 || s[i] > 57) && s[i] != '\0')
 	{
@@ -23,6 +24,5 @@ int _atoi(char *s)
 		i++;
 	}
 
-	num *= m;
-	return (num);
+	return (num * m);
 }
