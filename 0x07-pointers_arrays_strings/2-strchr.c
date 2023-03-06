@@ -11,7 +11,7 @@ char *_strchr(char *s, char c)
 {
 	char *ret;
 
-	if (s == o)
+	if (s == 0)
 		return (0);
 
 	while (*s != '\0')
