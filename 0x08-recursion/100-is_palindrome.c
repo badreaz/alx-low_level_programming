@@ -8,9 +8,24 @@
  */
 int is_palindrome(char *s)
 {
-	if (*s == '\0')
-	{
+	char *rev = s;
+
+	if (s == 0)
 		return (1);
+
+	while (*rev != '\0')
+	{
+		rev++;
 	}
-	return (0);
+
+	while (*s != '\0')
+	{
+		rev--;
+		if (*s != *rev)
+		{
+			return (0);
+		}
+		s++;
+	}
+	return (1);
 }
