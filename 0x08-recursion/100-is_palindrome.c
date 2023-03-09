@@ -1,6 +1,36 @@
 #include "main.h"
 
 /**
+ * _len - length of string.
+ * @s: pointer to string.
+ *
+ * Return: length.
+ */
+int _len(char *s)
+{
+	if (*s)
+		return (_len(s) + 1);
+	return (0);
+}
+
+/**
+ * recursion - recurse through the string.
+ * @s: pointer to string.
+ * @len: length of string.
+ * @i: number of recurse went through.
+ *
+ * Return: 1 if string is palindrome, otherwise 0.
+ */
+int recursion(char *s, int len, int i)
+{
+	if (i >= len)
+		return (1);
+	if (s[len] == s[i])
+		return (recursion(s, len - 1, i + 1));
+	return (0);
+}
+
+/**
  * is_palindrome - check if a string is plaindrome.
  * @s: pointer to string.
  *
@@ -8,24 +38,7 @@
  */
 int is_palindrome(char *s)
 {
-	char *rev = s;
+	int len = _len(s);
 
-	if (s == 0)
-		return (1);
-
-	while (*rev != '\0')
-	{
-		rev++;
-	}
-
-	while (*s != '\0')
-	{
-		rev--;
-		if (*s != *rev)
-		{
-			return (0);
-		}
-		s++;
-	}
-	return (1);
+	return (recursion(s, (len - 1), 0));
 }
