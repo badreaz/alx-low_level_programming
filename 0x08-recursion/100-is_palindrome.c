@@ -8,8 +8,8 @@
  */
 int _len(char *s)
 {
-	if (*s)
-		return (_len(s) + 1);
+	if (*s != '\0')
+		return (_len(s++) + 1);
 	return (0);
 }
 
@@ -25,7 +25,7 @@ int recursion(char *s, int len, int i)
 {
 	if (i >= len)
 		return (1);
-	if (s[len] == s[i])
+	if (*(s + len) == *(s + i))
 		return (recursion(s, len - 1, i + 1));
 	return (0);
 }
