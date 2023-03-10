@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 /**
  * main - print the executablle file name.
@@ -6,8 +7,8 @@
  *
  * Return: 0.
  */
-int main(int argc, char *argv)
+int main(int argc, char **argv)
 {
-	printf("%s", argv[0]);
+	printf("%s\n", *(argv + argc));
 	return (0);
 }
