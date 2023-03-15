@@ -26,7 +26,7 @@ char **strtow(char *str)
 		count[n] = c;
 		n++;
 	}
-	ret = malloc(sizeof(str) * n);
+	ret = (char **)malloc(n);
 	if (ret == NULL)
 	{
 		free(ret);
