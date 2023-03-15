@@ -20,7 +20,6 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		for (; str[i] == 32; i++)
-			;
 		for (; str[i] != 32 && str[j]; i++)
 			c++;
 		count[n] = c;
