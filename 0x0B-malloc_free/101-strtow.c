@@ -12,7 +12,7 @@
 char **strtow(char *str)
 {
 	char **ret;
-	int count[];
+	int count[50];
 	int i = 0, j = 0, n = 0, c = 1, num;
 
 	if (str == NULL || *str == 0)
