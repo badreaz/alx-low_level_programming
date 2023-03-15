@@ -12,12 +12,12 @@
 char **strtow(char *str)
 {
 	char **ret;
-	int count[] = {0};
-	int i = 0, j = 0, n = 0, c = 1;
+	int count[];
+	int i = 0, j = 0, n = 0, c = 1, num;
 
 	if (str == NULL || *str == 0)
 		return (NULL);
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		for (; str[i] == 32; i++)
 			;
@@ -33,9 +33,10 @@ char **strtow(char *str)
 		return (NULL);
 	}
 	c = 0;
-	while (str[j])
+	while (str[j] != '\0')
 	{
-		ret[c] = malloc(sizeof(char) * count[c]);
+		num = count[c];
+		ret[c] = malloc(sizeof(char) * num);
 		if (ret[c] == NULL)
 		{
 			for (i = 0; i <= c; i++)
@@ -50,5 +51,6 @@ char **strtow(char *str)
 		ret[c][i] = '\0';
 		c++;
 	}
+	ret[c] = NULL;
 	return (ret);
 }
