@@ -26,8 +26,7 @@ char **strtow(char *str)
 		count[n] = c;
 		n++;
 	}
-
-	ret = malloc(sizeof(ret) * (n + 1));
+	ret = malloc(sizeof(str) * n);
 	if (ret == NULL)
 	{
 		free(ret);
@@ -51,6 +50,5 @@ char **strtow(char *str)
 		ret[c][i] = '\0';
 		c++;
 	}
-
-	return(ret);
+	return (ret);
 }
