@@ -12,45 +12,45 @@
 char **strtow(char *str)
 {
 	char **ret;
-	int *count;
-	int i, j = 1, n = 0, c = -1;
+	int count[] = {0};
+	int i = 0, j = 0, n = 0, c = 1;
 
-	if (str == NULL || *str == "")
+	if (str == NULL || *str == 0)
 		return (NULL);
-	for (i = 0; str[i]; i++)
+	while (str[i])
 	{
-		if (j == 1 && str[i] == 32)
-			n++; j = 0;
-		else if (str[i] != 32)
-			j = 1, count[n] += 1;
+		for (; str[i] == 32; i++)
+			;
+		for (; str[i] != 32 && str[j]; i++)
+			c++;
+		count[n] = c;
+		n++;
 	}
-	ret = malloc(sizeof(ret) * n);
+
+	ret = malloc(sizeof(ret) * (n + 1));
 	if (ret == NULL)
 	{
 		free(ret);
 		return (NULL);
 	}
-	for (i = 0; str[i]; i++)
+	c = 0;
+	while (str[j])
 	{
-		if (j != 0)
+		ret[c] = malloc(sizeof(char) * count[c]);
+		if (ret[c] == NULL)
 		{
-			c++;
-			ret[c] = malloc(sizeof(char) * (count[c] + 1));
-			if (ret[c] == NULL)
-			{
-				free_grid(ret, n + 1);
-				return (ret);
-			}
+			for (i = 0; i <= c; i++)
+				free(ret[i]);
+			free(ret);
+			return (NULL);
 		}
-		for (j = 0; str[i]; j++)
-		{
-			if (str[i] == " ")
-				break;
-			ret[c][j] = str[i];
-		}
-		if (j != 0)
-			ret[c][j] = '\0';
+		for (; str[j] == 32; j++)
+			;
+		for (i = 0; str[j] != 32 && str[j]; j++, i++)
+			ret[c][i] = str[j];
+		ret[c][i] = '\0';
+		c++;
 	}
-	ret[c + 1][0] = '\0';
+
 	return(ret);
 }
