@@ -13,7 +13,7 @@ char **strtow(char *str)
 {
 	char **ret;
 	int count[50];
-	int i = 0, j = 0, n = 0, c = 1, num;
+	int i = 0, j = 0, n = 0, c = 1;
 
 	if (str == NULL || *str == 0)
 		return (NULL);
@@ -35,8 +35,7 @@ char **strtow(char *str)
 	c = 0;
 	while (str[j] != '\0')
 	{
-		num = count[c];
-		ret[c] = malloc(sizeof(char) * num);
+		ret[c] = malloc(sizeof(char) * count[c]);
 		if (ret[c] == NULL)
 		{
 			for (i = 0; i <= c; i++)
