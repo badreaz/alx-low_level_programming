@@ -8,18 +8,18 @@
  *
  * Return: 0 (sucess) otherwise 1.
  */
-int not_number(char *argv[])
+int not_number(char *array[])
 {
 	unsigned int i = 0;
 
-	for (i = 0; i < strlen(argv[1]); i++)
+	for (i = 0; i < strlen(array[1]); i++)
 	{
-		if (!(argv[1][i] > 47 && argv[1][i] < 58))
+		if (!(array[1][i] > 47 && array[1][i] < 58))
 			return (1);
 	}
-	for (i = 0; i < strlen(argv[2]); i++)
+	for (i = 0; i < strlen(array[2]); i++)
 	{
-		if (!(argv[2][i] > 47 && argv[2][i] < 58))
+		if (!(array[2][i] > 47 && array[2][i] < 58))
 			return (1);
 	}
 	return (0);
@@ -33,7 +33,7 @@ int not_number(char *argv[])
  */
 int main(int argc, char *argv[])
 {
-	int mul, num1, num2;
+	unsigned int mul, num1, num2;
 
 	if (argc != 3 || not_number(argv))
 	{
