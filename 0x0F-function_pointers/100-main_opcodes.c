@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int size;
+	int i, size;
 	char *f;
 
 	if (argc != 2)
