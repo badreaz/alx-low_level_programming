@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <string.h>
 
-int _strlen(char *s);
+int _strlen(const char *s);
 /**
  * add_node_end - adds a new node at the end of a list_t list.
  * @head: pointer to pointer to the start of node.
@@ -20,7 +20,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 	new->str = strdup(str);
-	new->len = _strlen(new->str);
+	new->len = _strlen(str);
 	new->next = NULL;
 
 	if (*head == NULL)
@@ -46,15 +46,13 @@ list_t *add_node_end(list_t **head, const char *str)
  *
  * Return: the length of string.
  */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
-	char *p = s;
 	int count = 0;
 
-	while (*p != '\0')
+	while (s[count] != '\0')
 	{
 		count++;
-		p++;
 	}
 	return (count);
 }
