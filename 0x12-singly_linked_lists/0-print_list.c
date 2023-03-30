@@ -8,26 +8,15 @@
  */
 size_t print_list(const list_t *h)
 {
-	int c;
-	list_t *ptr = h->next;
+	size_t c;
 
-	for (c = 0; ptr && h; c++)
+	for (c = 0; h; c++)
 	{
-		if (c == 0)
-		{
-			if (h->str == NULL)
-				printf("[0] (nil)\n");
-			else
-				printf("[%d] %s\n", h->len, h->str);
-		}
+		if (h->str == NULL)
+			printf("[0] (nil)\n");
 		else
-		{
-			if (ptr->str == NULL)
-				printf("[0] (nil)\n");
-			else
-				printf("[%d] %s\n", ptr->len, ptr->str);
-			ptr = ptr->next;
-		}
+			printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
 	}
 	return (c);
 }
