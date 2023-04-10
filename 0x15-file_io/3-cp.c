@@ -10,10 +10,10 @@
 
 int main(int argc, char *argv[])
 {
-	int from, to;
+	long int from, to;
 	char buffer[1024];
-	int i, j;
-	mode_t mod = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
+	long int i, j;
+	mode_t mod = 00664; /*S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;*/
 
 	if (argc != 3)
 		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
 		}
 	}
 	if (close(from) == -1)
-		dprintf(2, "Error: Can't close fd %d\n", from), exit(100);
+		dprintf(2, "Error: Can't close fd %ld\n", from), exit(100);
 
 	if (close(to) == -1)
-		dprintf(2, "Error: Can't close fd %d\n", to), exit(100);
+		dprintf(2, "Error: Can't close fd %ld\n", to), exit(100);
 
 	return (0);
 }
