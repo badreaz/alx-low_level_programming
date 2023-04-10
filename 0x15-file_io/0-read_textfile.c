@@ -11,8 +11,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t count;
-	int textfile, let;
+	ssize_t count, textfile, let;
 	char text[1024];
 
 	if (filename == NULL || letters == 0)
