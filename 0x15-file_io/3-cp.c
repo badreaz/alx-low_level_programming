@@ -9,33 +9,39 @@
 
 int main(int argc, char *argv[])
 {
-	FILE *ptr_from, *ptr_to;
+	int from, to;
 	char buffer[1024];
-	int i;
+	int i, j;
 
 	if (argc != 3)
 	{
-		fprintf(stderr, "Usage: cp file_from file_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	ptr_from = fopen(argv[1], "r");
-	if (!ptr_from)
+	from = open(argv[1], O_RDONLY);
+	if (from == -1)
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	ptr_to = fopen(argv[2], "W");
-	while (fgets(buffer, 1024, ptr_from))
+	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	i = 1;
+	while (i)
 	{
-		for (i = 0; i < 1024; i++)
-			buffer[i] = '\0';
-		if (!fputs(buffer, ptr_to))
+		i = read(from, buffer, 1024);
+		if (i == -1)
 		{
-			fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		j = write(to, buffer, i);
+		if (j == -1 || j != i)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
-	if (!fclose(ptr_from) || !fclose(ptr_to))
+	if (close(from) == -1 || close(to) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", 2);
 		exit(100);
