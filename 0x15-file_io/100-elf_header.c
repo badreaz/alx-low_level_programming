@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 		dprintf(2, "Usage: elf_header elf_filename");
 		exit(98);
 	}
-
+	else if (argv[1])
+		*argv[0] = '0';
 	return (0);
 }
