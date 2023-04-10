@@ -10,16 +10,24 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int i;
-	FILE *ptr;
+	int i, file, size;
 
-	ptr = fopen(filename, "w");
-	if (!ptr)
+	file = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	if (file == -1)
 		return (-1);
 
-	i = fputs(text_content, ptr);
-	if (i > 0)
+	if (text_content == NULL)
+	{
+		close(file);
 		return (1);
-	fclose(ptr);
-	return (-1);
+	}
+	size = 0;
+	while (text_content[size])
+		size++;
+	i =  write(file, text_content, size + 1);
+
+	if (i == -1 || close(file) == -1)
+		return (-1);
+
+	return (1);
 }
