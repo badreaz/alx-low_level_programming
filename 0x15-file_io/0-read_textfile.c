@@ -12,7 +12,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	size_t count;
-	int textfile, let, i;
+	int textfile, let;
 	char text[1024];
 
 	if (filename == NULL || letters == 0)
@@ -27,12 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		let = read(textfile, text, letters - count);
 		count += let;
-		i = write(1, text, let);
-		if (let == -1 || i == -1 || i != let)
-		{
-			close(textfile);
-			return (0);
-		}
+		write(1, text, let);
 	}
 	close(textfile);
 	return (count);
