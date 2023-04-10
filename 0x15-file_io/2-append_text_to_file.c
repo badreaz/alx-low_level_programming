@@ -10,13 +10,16 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *ptr;
+	int file, size;
 
-	ptr = fopen(filename, "a");
-	if (!ptr)
+	file = open(filename, O_WRONLY | O_APPEND);
+	if (file == -1)
 		return (-1);
-	if (!fputs(text_content, ptr))
+	size = 0;
+	while (text_content[size])
+		size++;
+	if (write(file, text_content, size) == -1)
 		return (-1);
-	fclose(ptr);
+	close(file);
 	return (1);
 }
