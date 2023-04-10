@@ -11,24 +11,22 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t count, textfile, let, i;
-	char text[1024];
+	ssize_t textfile, let;
+	char *text;
 
 	if (filename == NULL || letters == 0)
 		return (0);
 	textfile = open(filename, O_RDONLY);
 	if (textfile == -1)
 		return (0);
+	text = malloc(sizeof(char) * letters);
+	if (text == NULL)
+		return (0);
 
-	count = 0;
-	let = 1;
-	i = letters;
-	while (count < i && let != 0)
-	{
-		let = read(textfile, text, i - count);
-		count += let;
-		write(1, text, let);
-	}
+	let = read(textfile, text, letters);
+	write(1, text, let);
+
+	free(text);
 	close(textfile);
-	return (count);
+	return (let);
 }
