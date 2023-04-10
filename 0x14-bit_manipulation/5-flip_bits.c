@@ -15,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned int num = 0;
 
 	nxm = n ^ m;
-	for (i = 63; i >= 0; i--)
+	for (i = 31; i >= 0; i--)
 	{
 		if ((nxm >> i) & 1)
 		{
