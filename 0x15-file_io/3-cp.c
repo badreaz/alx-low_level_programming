@@ -20,18 +20,17 @@ int main(int argc, char *argv[])
 
 	from = open(argv[1], O_RDONLY);
 	if (from == -1)
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
-
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mod);
 	i = 1;
 	while (i)
 	{
 		i = read(from, buffer, 1024);
 		if (i == -1)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
 		j = write(to, buffer, i);
 		if (j == -1 || j != i)
 		{
