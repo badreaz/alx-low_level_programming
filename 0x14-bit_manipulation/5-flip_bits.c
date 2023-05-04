@@ -11,16 +11,16 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-        int i;
-        unsigned long int num = 0, nxm;
+	int i;
+	unsigned long int num = 0, nxm;
 
-        nxm = n ^ m;
-        for (i = 63; i >= 0; i--)
-        {
-                if ((nxm >> i) & 1)
-                {
-                        num++;
-                }
-        }
-        return (num);
+	nxm = n ^ m;
+	for (i = 63; i >= 0; i--)
+	{
+		if ((nxm >> i) & 1)
+		{
+			num++;
+		}
+	}
+	return (num);
 }

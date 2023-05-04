@@ -9,14 +9,14 @@
 
 int not_b(const char *b)
 {
-        int i;
+	int i;
 
-        for (i = 0; b[i]; i++)
-        {
-                if (b[i] != '1' && b[i] != '0')
-                        return (1);
-        }
-        return (0);
+	for (i = 0; b[i]; i++)
+	{
+		if (b[i] != '1' && b[i] != '0')
+			return (1);
+	}
+	return (0);
 }
 
 /**
@@ -30,22 +30,22 @@ int not_b(const char *b)
 
 unsigned int binary_to_uint(const char *b)
 {
-        unsigned int value = 0, sum = 0;
-        unsigned int i = 0, j = 1, x;
+	unsigned int value = 0, sum = 0;
+	unsigned int i = 0, j = 1, x;
 
-        if (b == NULL || not_b(b))
-                return (0);
-        while (b[i])
-                i++;
-        while (j < i + 1)
-        {
-                if (b[i - j] == '1')
-                {
-                        for (x = value = 1; x < j; x++)
-                                value = value * 2;
-                        sum += value;
-                }
-                j++;
-        }
-        return (sum);
+	if (b == NULL || not_b(b))
+		return (0);
+	while (b[i])
+		i++;
+	while (j < i + 1)
+	{
+		if (b[i - j] == '1')
+		{
+			for (x = value = 1; x < j; x++)
+				value = value * 2;
+			sum += value;
+		}
+		j++;
+	}
+	return (sum);
 }
