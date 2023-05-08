@@ -32,11 +32,11 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		j = write(to, buffer, i);
-		if (j == -1 || j != i || to == -1)
+		else if (i > 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
+			j = write(to, buffer, i);
+			if (j == -1 || j != i || to == -1)
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
 	}
 	if (close(from) == -1)
