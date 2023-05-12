@@ -56,7 +56,7 @@ void entry(unsigned int num)
 	if (num == ELFCLASS32)
 		printf("%#x", num);
 	else if (num == ELFCLASS64)
-		printf("%#lx", (long unsigned int)num);
+		printf("%#lx", (long int)num);
 }
 
 /**
