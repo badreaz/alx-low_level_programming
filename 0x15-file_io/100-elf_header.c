@@ -9,10 +9,12 @@ void class(int num)
 {
 	if (num == 1)
 		printf("ELF32");
+	else if (num == 2)
+		printf("ELF64");
 }
 
 /**
- * Data - get the data of elf file
+ * data - get the data of elf file
  * @num: data number.
  */
 void data(int num)
@@ -21,16 +23,6 @@ void data(int num)
 		printf("2's complement, little endian");
 	else if (num == 2)
 		printf("2's complement, big endian");
-}
-
-/**
- * version - get the version of elf file
- * @num: version number.
- */
-void version(int num)
-{
-	if (num == 1)
-		printf("1 (current)");
 }
 
 /**
@@ -54,37 +46,9 @@ void osabi(int num)
 void entry(unsigned int num)
 {
 	if (num == ELFCLASS32)
-		printf("%#x", num);
+		printf("%#x\n", num);
 	else if (num == ELFCLASS64)
-		printf("%#lx", (long int)num);
-}
-
-/**
- * print - print elf file
- * @buffer: pointer to struct.
- */
-void print(Elf64_Ehdr *buffer)
-{
-	int i;
-
-	printf("ELF Header:\n");
-	printf("  Magic:   ");
-	for (i = 0; i < 16; i++)
-		printf("%02x  ", buffer->e_ident[i]);
-	printf("\n  Class:                             ");
-	class(buffer->e_ident[EI_CLASS]);
-	printf("\n  Data:                              ");
-	data(buffer->e_ident[EI_DATA]);
-	printf("\n  Version:                           ");
-	version(buffer->e_ident[EI_VERSION]);
-	printf("\n  OS/ABI:                            ");
-	version(buffer->e_ident[EI_OSABI]);
-	printf("\n  ABI Version:                       %x",
-								buffer->e_ident[EI_ABIVERSION]);
-	printf("\n  Type:                              EXEC (Executable file)");
-	printf("\n  Entry point address:               ");
-	entry(buffer->e_entry);
-	printf("\n");
+		printf("%#lx\n", (long int)num);
 }
 
 /**
@@ -98,7 +62,7 @@ void print(Elf64_Ehdr *buffer)
 
 int main(int argc, char *argv[])
 {
-	int fd;
+	int fd, i;
 	Elf64_Ehdr *buffer;
 
 	if (argc != 2)
@@ -113,7 +77,24 @@ int main(int argc, char *argv[])
 	if (buffer->e_ident[0] != EI_MAG0 && buffer->e_ident[1] != EI_MAG1
 	 && buffer->e_ident[2] != EI_MAG2 && buffer->e_ident[3] != EI_MAG3)
 		dprintf(2, "Error: Not an ELF file"), exit(98);
-	print(buffer);
+	printf("ELF Header:\n");
+	printf("  Magic:   ");
+	for (i = 0; i < 16; i++)
+		printf("%02x  ", buffer->e_ident[i]);
+	printf("\n  Class:                             ");
+	class(buffer->e_ident[EI_CLASS]);
+	printf("\n  Data:                              ");
+	data(buffer->e_ident[EI_DATA]);
+	printf("\n  Version:                           ");
+	if (buffer->e_ident[EI_VERSION] == 1)
+		printf("1 (current)");
+	printf("\n  OS/ABI:                            ");
+	version(buffer->e_ident[EI_OSABI]);
+	printf("\n  ABI Version:                       %x",
+								buffer->e_ident[EI_ABIVERSION]);
+	printf("\n  Type:                              EXEC (Executable file)");
+	printf("\n  Entry point address:               ");
+	entry(buffer->e_entry);
 	if (!close(fd))
 		exit(98);
 	return (0);
