@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 	if (buffer->e_ident[EI_VERSION] == 1)
 		printf("1 (current)");
 	printf("\n  OS/ABI:                            ");
-	version(buffer->e_ident[EI_OSABI]);
+	osabi(buffer->e_ident[EI_OSABI]);
 	printf("\n  ABI Version:                       %x",
 								buffer->e_ident[EI_ABIVERSION]);
 	printf("\n  Type:                              EXEC (Executable file)");
