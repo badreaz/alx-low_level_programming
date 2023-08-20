@@ -13,6 +13,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i;
 	dlistint_t *new, *ptr = *h;
 
+	if (!h)
+		new = add_dnodeint_end(h, n);
 	if (idx == 0)
 	{
 		new = add_dnodeint(h, n);
