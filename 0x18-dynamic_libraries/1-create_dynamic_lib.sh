@@ -1,1 +1,1 @@
-gcc -fPIC *.c -shared -o liball.so
+gcc -fPIC main.h *.c -shared -o liball.so
