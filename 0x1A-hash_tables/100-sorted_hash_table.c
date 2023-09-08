@@ -40,7 +40,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int check_key(shash_node_t *node, const char *key, const char *value)
 {
-	for (; node; node = node->next)
+	while (node)
 	{
 		if (strcmp(node->key, key) == 0)
 		{
@@ -48,6 +48,7 @@ int check_key(shash_node_t *node, const char *key, const char *value)
 			node->value = strdup(value);
 			return (1);
 		}
+		node = node->next;
 	}
 	return (0);
 }
