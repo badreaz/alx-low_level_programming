@@ -63,13 +63,13 @@ int check_key(shash_node_t *node, const char *key, const char *value)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *new_node, *nodes = ht->shead;
+	shash_node_t *new_node, *nodes;
 	unsigned long int index;
 
 	if (ht == NULL || key == NULL)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	if (check_key(nodes, key, value))
+	if (check_key(ht->shead, key, value))
 		return (1);
 	new_node = malloc(sizeof(shash_node_t));
 	if (new_node == NULL)
