@@ -1,6 +1,6 @@
 .PHONY: all clean oclean fclean re
 
-CC = gcc -Wall -Werror -Wextra -pedantic
+CC = gcc
 SRC = main.c school.c
 NAME = school
 OBJ = $(SRC:.c=.o)
