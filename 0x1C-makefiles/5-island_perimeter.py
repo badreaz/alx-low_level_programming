@@ -14,11 +14,11 @@ def island_perimeter(grid):
             try:
                 if grid[i][j] != grid[i][j + 1]:
                     num += 1
-                elif (j == 0 or j + 1 == len(grid[i])) and grid[i][j]:
+                elif (j == 0 or j + 1 == len(grid[i]) - 1) and grid[i][j]:
                     num += 1
                 if grid[i][j] != grid[i + 1][j]:
                     num += 1
-                elif (i == 0 or i + 1 == len(grid)) and grid[i][j]:
+                elif (i == 0 or i + 1 == len(grid) - 1) and grid[i][j]:
                     num += 1
             except IndexError:
                 continue
