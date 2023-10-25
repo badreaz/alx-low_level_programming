@@ -7,7 +7,7 @@ OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ) m.h
-	$(CC) $(obj) -o $(NAME)
+	$(CC) $(CFLAGS) $(obj) -o $(NAME)
 
 clean:
 	$(RM) *~ $(NAME)
