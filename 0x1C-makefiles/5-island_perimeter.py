@@ -5,6 +5,9 @@
 def island_perimeter(grid):
     """ returns the perimeter of the island
     described in rid """
+    if not grid:
+        return 0
+
     num = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
@@ -16,6 +19,7 @@ def island_perimeter(grid):
             except IndexError:
                 continue
     return num
+
 
 if __name__ == "__main__":
     grid = [
